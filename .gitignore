@@ -3,7 +3,9 @@
 Thumbs.db
 desktop.ini
 
-# Local server & development scripts
+# Local development backups & server scripts
+index.full.html
+*.backup.*
 serve.ps1
 push.bat
 
