@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD. NUR ISLAM — Quality Assurance Engineer (Manual & AI Testing)</title>
+  
+  <meta name="description" content="Personal portfolio of MD. NUR ISLAM — Quality Assurance Engineer specializing in Manual Testing and AI-Powered QA.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#3b82f6',
+              dark: '#09090b',
+              card: '#131418',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Custom Core Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Glow -->
+  <div class="ambient-glow"></div>
+  
+  <!-- Subtle Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- ==================== FLOATING NAVIGATION BAR ==================== -->
+  <header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-3 sm:px-6">
+    <nav class="nav-floating flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-5 py-2 rounded-full backdrop-blur-xl shadow-2xl transition-colors duration-300 max-w-2xl w-full">
+      
+      <!-- Brand on Left: Photo + Name Underneath -->
+      <a href="#hero" class="flex flex-col items-center justify-center pr-3 border-r border-black/10 dark:border-white/10 group flex-shrink-0">
+        <div class="relative">
+          <img src="assets/images/profile.jpg" alt="MD. NUR ISLAM" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-blue-500 shadow-sm group-hover:scale-105 transition-transform duration-200">
+          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white dark:border-[#09090b]"></span>
+        </div>
+        <span class="text-[9px] sm:text-[10px] font-bold font-mono tracking-tight leading-none mt-1 text-zinc-900 dark:text-zinc-100 group-hover:text-blue-500 transition-colors">
+          MD. NUR ISLAM
+        </span>
+      </a>
+
+      <!-- Button-Type Nav Links (Clean & Focused on Finalized Sections) -->
+      <div class="flex items-center gap-1 sm:gap-2">
+        <a href="#hero" class="nav-btn active">Home</a>
+        <a href="#about" class="nav-btn">About Me</a>
+        <a href="#contact" class="nav-btn">Contact</a>
+      </div>
+
+      <!-- Action Controls on Right -->
+      <div class="flex items-center gap-1 pl-2 border-l border-black/10 dark:border-white/10 flex-shrink-0">
+        
+        <button id="theme-toggle" aria-label="Toggle Theme" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/5 transition-all text-zinc-600 dark:text-zinc-400">
+          <i class="ph-bold ph-moon text-sm"></i>
+        </button>
+
+        <button id="sound-toggle" aria-label="Toggle Tactile Sound" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/5 transition-all text-zinc-600 dark:text-zinc-400">
+          <i class="ph-bold ph-speaker-high text-sm"></i>
+        </button>
+
+        <a href="#contact" class="magnetic-btn text-xs font-semibold px-3.5 py-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-colors shadow-sm hidden sm:inline-flex">
+          Hire QA
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 pt-32 sm:pt-40 pb-24 relative z-10">
+    
+    <!-- ==================== 1. HOME SECTION ==================== -->
+    <section id="hero" class="mb-28 sm:mb-36">
+      
+      <!-- Live Status & Local Time Bar -->
+      <div class="flex flex-wrap items-center gap-3 mb-8">
+        <div class="pill-badge">
+          <span class="status-pulse"></span>
+          <span class="font-medium text-emerald-500">Available for QA Engineer Roles</span>
+        </div>
+        
+        <div class="pill-badge">
+          <i class="ph ph-hand-tap text-xs text-blue-500"></i>
+          <span class="font-medium">Manual Testing Specialist</span>
+        </div>
+
+        <div class="pill-badge">
+          <i class="ph ph-sparkle text-xs text-purple-500"></i>
+          <span class="font-medium text-purple-400">AI-Powered QA Practitioner</span>
+        </div>
+
+        <div class="pill-badge hidden sm:flex">
+          <i class="ph ph-clock text-xs opacity-60"></i>
+          <span id="local-clock">Syncing time...</span>
+        </div>
+      </div>
+
+      <!-- Hero Content Split -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-8 order-2 lg:order-1">
+          <div class="inline-block font-mono text-xs font-semibold text-blue-500 uppercase tracking-widest mb-3">
+            Quality Assurance & Software Testing
+          </div>
+          
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-4">
+            MD. NUR ISLAM
+          </h1>
+          
+          <h2 class="text-xl sm:text-2xl text-blue-500 dark:text-blue-400 font-semibold mb-6 flex flex-wrap items-center gap-2">
+            <span>Quality Assurance Engineer</span>
+            <span class="text-xs font-mono px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium">Manual + AI Testing</span>
+          </h2>
+
+          <p class="text-base sm:text-lg opacity-75 max-w-2xl leading-relaxed mb-8">
+            Empowered by a strong foundation in <strong>Manual Testing</strong> and amplified by <strong>AI-Powered Testing tools</strong>. I combine deep exploratory human intuition, thorough boundary value analysis, and smart AI test generation to uncover hidden bugs, protect user experience, and ensure high-reliability software releases.
+          </p>
+
+          <!-- Primary CTAs -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#about" class="magnetic-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-500 transition-all shadow-md">
+              <span>Read About Me</span>
+              <i class="ph-bold ph-arrow-down text-xs"></i>
+            </a>
+
+            <button onclick="copyEmail('mdnurislam@example.com')" class="magnetic-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full luxury-card font-medium text-sm transition-all">
+              <i class="ph ph-copy text-base text-blue-500"></i>
+              <span class="font-mono text-xs">Copy Email</span>
+            </button>
+
+            <a href="#contact" class="magnetic-btn inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 text-sm font-medium transition-all">
+              <span>Contact Me</span>
+              <i class="ph-bold ph-paper-plane-tilt text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Big Hero Portrait Photo -->
+        <div class="lg:col-span-4 order-1 lg:order-2 flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-purple-500 to-emerald-500 rounded-3xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"></div>
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border-2 border-white/20 dark:border-white/10 shadow-2xl bg-[#121316]">
+              <img src="assets/images/profile.jpg" alt="MD. NUR ISLAM" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== QA METRIC TICKER ==================== -->
+    <section class="py-6 border-y border-black/10 dark:border-white/10 mb-28 overflow-hidden">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-blue-500">Manual + AI</div>
+          <div class="text-xs uppercase tracking-wider opacity-60 mt-1">Dual Testing Strength</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-emerald-500">100%</div>
+          <div class="text-xs uppercase tracking-wider opacity-60 mt-1">Exploratory Rigor</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold font-mono tracking-tight text-purple-400">3x Faster</div>
+          <div class="text-xs uppercase tracking-wider opacity-60 mt-1">AI Test Generation</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold font-mono tracking-tight">&lt;0.1%</div>
+          <div class="text-xs uppercase tracking-wider opacity-60 mt-1">Defect Leakage Target</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT ME SECTION ==================== -->
+    <section id="about" class="mb-32">
+      <div class="mb-12">
+        <span class="font-mono text-xs text-blue-500 uppercase tracking-widest font-semibold block mb-2">01 / PROFESSIONAL PROFILE</span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">About Me</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Detailed Narrative of Manual + AI Mastery -->
+        <div class="lg:col-span-7 luxury-card p-8 rounded-2xl">
+          <h3 class="text-2xl font-bold mb-4">The Synergy of Human Intuition & Artificial Intelligence in QA.</h3>
+          
+          <p class="opacity-85 text-sm sm:text-base leading-relaxed mb-4">
+            I am a passionate <strong>Quality Assurance Engineer</strong> who firmly believes that exceptional software testing requires both <strong>human empathy</strong> and <strong>modern technological power</strong>. Real users are humans—which is why my foundation is deeply rooted in <strong>Manual Testing</strong>. I put myself in the end-user's shoes to explore workflows, examine usability nuances, and uncover edge defects that automated scripts overlook.
+          </p>
+
+          <p class="opacity-80 text-sm sm:text-base leading-relaxed mb-4">
+            At the same time, I supercharge my manual testing with <strong>Artificial Intelligence (AI)</strong>. By using smart AI prompt engineering and generative testing tools, I rapidly generate comprehensive test matrices, discover obscure boundary conditions, and synthesize thousands of realistic test datasets in minutes.
+          </p>
+
+          <p class="opacity-75 text-sm sm:text-base leading-relaxed mb-6">
+            From crafting meticulous <strong>Test Scenarios & Test Cases</strong>, conducting <strong>Exploratory & Regression Testing</strong>, to performing <strong>API validation in Postman</strong> and managing the complete <strong>Bug Life Cycle in Jira</strong>, I ensure fast-moving Agile development teams ship bulletproof software with total confidence.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-6 border-t border-black/5 dark:border-white/5 font-mono text-xs">
+            <div>
+              <span class="opacity-50 block uppercase">Name:</span>
+              <span class="font-bold">MD. NUR ISLAM</span>
+            </div>
+            <div>
+              <span class="opacity-50 block uppercase">Primary Focus:</span>
+              <span class="font-bold text-blue-500">Quality Assurance Engineer</span>
+            </div>
+            <div>
+              <span class="opacity-50 block uppercase">Testing Approach:</span>
+              <span class="font-bold text-emerald-500">Manual + AI-Powered QA</span>
+            </div>
+            <div>
+              <span class="opacity-50 block uppercase">Availability:</span>
+              <span class="font-bold">Open for Full-time / Remote</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Core Competency Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Manual Testing Excellence -->
+          <div class="luxury-card p-6 rounded-2xl border-l-4 border-l-blue-500">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 flex-shrink-0">
+                <i class="ph ph-hand-tap text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">Manual & Exploratory Rigor</h4>
+                <p class="text-xs opacity-70">Deep exploratory testing, user empathy, boundary value analysis (BVA), and critical thinking.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI-Powered Testing -->
+          <div class="luxury-card p-6 rounded-2xl border-l-4 border-l-purple-500">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 flex-shrink-0">
+                <i class="ph ph-sparkle text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">AI-Assisted Testing</h4>
+                <p class="text-xs opacity-70">Leveraging AI to generate complex edge cases, synthetic test data, and predict failure-prone areas.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- API & Contract Testing -->
+          <div class="luxury-card p-6 rounded-2xl border-l-4 border-l-amber-500">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 flex-shrink-0">
+                <i class="ph ph-cloud-check text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">API & Backend Testing</h4>
+                <p class="text-xs opacity-70">Postman automated test suites, JSON Schema contracts, status code audits & error edge flows.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bug Tracking & Jira Lifecycle -->
+          <div class="luxury-card p-6 rounded-2xl border-l-4 border-l-emerald-500">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 flex-shrink-0">
+                <i class="ph ph-bug text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold">Defect Management in Jira</h4>
+                <p class="text-xs opacity-70">Detailed bug reports with clear reproduction steps, screenshots/logs, severity ratings & root-cause tracking.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. CONTACT SECTION ==================== -->
+    <section id="contact" class="luxury-card p-8 sm:p-14 rounded-3xl relative overflow-hidden text-center mb-16">
+      
+      <div class="max-w-2xl mx-auto relative z-10">
+        <span class="font-mono text-xs text-blue-500 uppercase tracking-widest font-semibold block mb-3">GET IN TOUCH</span>
+        
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mb-4">
+          Looking for a Quality Assurance Engineer to safeguard your software?
+        </h2>
+
+        <p class="opacity-75 text-sm sm:text-base mb-8 max-w-lg mx-auto">
+          Specialized in Manual Testing, AI-assisted test design, and API verification. Let's connect to make your software bulletproof.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:mdnurislam@example.com" class="magnetic-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-500 transition-all shadow-md">
+            <span>Send Email</span>
+            <i class="ph-bold ph-paper-plane-tilt text-sm"></i>
+          </a>
+
+          <button onclick="copyEmail('mdnurislam@example.com')" class="magnetic-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full luxury-card font-medium text-sm transition-all">
+            <i class="ph ph-copy text-blue-500"></i>
+            <span>Copy Email Address</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="pt-8 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono opacity-60">
+      <div>
+        <span>Quality Assured by <strong class="text-zinc-900 dark:text-zinc-100 font-bold">MD. NUR ISLAM</strong></span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/nurOSD" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">LinkedIn</a>
+        <a href="mailto:mdnurislam@example.com" class="hover:text-blue-500 transition-colors">Email</a>
+      </div>
+
+      <div>
+        <span>&copy; <span id="year">2026</span> All rights reserved.</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast">
+    <i class="ph-bold ph-check-circle text-blue-500 text-lg"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
