@@ -150,7 +150,7 @@ function updateThemeIcon(isLight) {
 
 // --- 7. Scrollspy Active Navbar Link ---
 function initScrollSpy() {
-  const sectionIds = ['hero'];
+  const sectionIds = ['hero', 'about', 'contact'];
   const navBtns = document.querySelectorAll('.nav-btn');
   
   window.addEventListener('scroll', () => {
