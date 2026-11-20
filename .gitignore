@@ -8,6 +8,7 @@ index.full.html
 *.backup.*
 serve.ps1
 push.bat
+*.bat
 
 # Logs & Runtime
 *.log

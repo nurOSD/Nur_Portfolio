@@ -127,12 +127,22 @@ function initThemeToggle() {
   const currentTheme = localStorage.getItem('portfolio-theme') || 'dark';
   if (currentTheme === 'light') {
     document.body.classList.add('light-theme');
+    document.documentElement.classList.remove('dark');
     updateThemeIcon(true);
+  } else {
+    document.body.classList.remove('light-theme');
+    document.documentElement.classList.add('dark');
+    updateThemeIcon(false);
   }
 
   themeBtn.addEventListener('click', () => {
     playSubtleClick();
     const isLight = document.body.classList.toggle('light-theme');
+    if (isLight) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
     localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
     updateThemeIcon(isLight);
     showToast(isLight ? 'Switched to Clean Light' : 'Switched to Clean Dark');
@@ -150,7 +160,7 @@ function updateThemeIcon(isLight) {
 
 // --- 7. Scrollspy Active Navbar Link ---
 function initScrollSpy() {
-  const sectionIds = ['hero', 'about', 'contact'];
+  const sectionIds = ['hero', 'about', 'education', 'contact'];
   const navBtns = document.querySelectorAll('.nav-btn');
   
   window.addEventListener('scroll', () => {

@@ -52,6 +52,10 @@ body.light-theme {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-primary);

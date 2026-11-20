@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,10 +47,10 @@
 
   <!-- ==================== FLOATING NAVIGATION BAR ==================== -->
   <header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-3 sm:px-6">
-    <nav class="nav-floating flex items-center justify-between gap-4 px-4 sm:px-6 py-2 rounded-full backdrop-blur-xl shadow-2xl transition-colors duration-300 max-w-xl w-full">
+    <nav class="nav-floating flex items-center justify-between gap-2 sm:gap-4 px-3 sm:px-5 py-2 rounded-full backdrop-blur-xl shadow-2xl transition-colors duration-300 max-w-2xl w-full">
       
       <!-- Brand on Left: Photo + Name Underneath -->
-      <a href="#hero" class="flex flex-col items-center justify-center group flex-shrink-0">
+      <a href="#hero" class="flex flex-col items-center justify-center pr-3 border-r border-black/10 dark:border-white/10 group flex-shrink-0">
         <div class="relative">
           <img src="assets/images/profile.jpg" alt="MD. NUR ISLAM" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border-2 border-blue-500 shadow-sm group-hover:scale-105 transition-transform duration-200">
           <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white dark:border-[#09090b]"></span>
@@ -60,14 +60,15 @@
         </span>
       </a>
 
-      <!-- Button-Type Nav Links (Home & About Me) -->
-      <div class="flex items-center gap-2">
+      <!-- Button-Type Nav Links -->
+      <div class="flex items-center gap-1 sm:gap-2">
         <a href="#hero" class="nav-btn active">Home</a>
         <a href="#about" class="nav-btn">About Me</a>
-      </div>
+        <a href="#education" class="nav-btn">Education</a>
+        </div>
 
       <!-- Action Controls on Right -->
-      <div class="flex items-center gap-1.5 pl-2 border-l border-black/10 dark:border-white/10 flex-shrink-0">
+      <div class="flex items-center gap-1 pl-2 border-l border-black/10 dark:border-white/10 flex-shrink-0">
         
         <button id="theme-toggle" aria-label="Toggle Theme" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/5 transition-all text-zinc-600 dark:text-zinc-400">
           <i class="ph-bold ph-moon text-sm"></i>
@@ -76,6 +77,8 @@
         <button id="sound-toggle" aria-label="Toggle Tactile Sound" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/5 dark:hover:bg-white/5 transition-all text-zinc-600 dark:text-zinc-400">
           <i class="ph-bold ph-speaker-high text-sm"></i>
         </button>
+
+        <a href="mailto:mdnurislam@example.com" class="magnetic-btn text-xs font-semibold px-3.5 py-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-colors shadow-sm hidden sm:inline-flex">Hire QA</a>
       </div>
     </nav>
   </header>
@@ -136,10 +139,12 @@
               <i class="ph-bold ph-arrow-down text-xs"></i>
             </a>
 
-            <button onclick="copyEmail('mdnurislam@example.com')" class="magnetic-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full luxury-card font-medium text-sm transition-all shadow-sm">
+            <button onclick="copyEmail('mdnurislam@example.com')" class="magnetic-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full luxury-card font-medium text-sm transition-all">
               <i class="ph ph-copy text-base text-blue-500"></i>
               <span class="font-mono text-xs">Copy Email</span>
             </button>
+
+            <a href="#education" class="magnetic-btn inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 text-sm font-medium transition-all"><span>Education</span><i class="ph-bold ph-graduation-cap text-xs"></i></a>
           </div>
         </div>
 
@@ -276,6 +281,243 @@
                 <h4 class="text-lg font-bold">Defect Management in Jira</h4>
                 <p class="text-xs opacity-70">Detailed bug reports with clear reproduction steps, screenshots/logs, severity ratings & root-cause tracking.</p>
               </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. EDUCATION SECTION ==================== -->
+    <section id="education" class="mb-28 sm:mb-36">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-mono font-bold mb-3">
+            <i class="ph-bold ph-graduation-cap text-sm"></i>
+            <span>ACADEMIC BACKGROUND</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-blue-500">
+            Education &amp; Qualifications
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-600 font-mono font-medium max-w-xs sm:text-right">
+          Formal foundations in computer science, software engineering, and analytical problem-solving.
+        </p>
+      </div>
+
+      <!-- Education Cards Stack -->
+      <div class="space-y-6">
+
+        <!-- 1. B.Sc. in CSE - Daffodil International University (Featured Highlight) -->
+        <div class="luxury-card p-6 sm:p-8 rounded-3xl border-l-4 border-l-blue-500 relative overflow-hidden group shadow-lg">
+          <!-- Decorative Background Icon -->
+          <div class="absolute -right-6 -bottom-6 opacity-5 dark:opacity-[0.04] pointer-events-none group-hover:scale-110 group-hover:opacity-10 transition-all duration-500">
+            <i class="ph ph-graduation-cap text-9xl"></i>
+          </div>
+
+          <!-- Card Header: Title + Big Highlight Badges -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 pb-6 border-b border-black/10 dark:border-white/10 relative z-10">
+            <div class="flex items-start sm:items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-500 flex-shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-sm">
+                <i class="ph-bold ph-student text-3xl"></i>
+              </div>
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-blue-500/15 text-blue-600 dark:text-blue-400 mb-1 border border-blue-500/20">
+                  UNDERGRADUATE DEGREE
+                </span>
+                <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white dark:text-white [body.light-theme_&]:text-slate-900">
+                  B.Sc. in Computer Science and Engineering (CSE)
+                </h3>
+                <p class="text-sm sm:text-base font-bold text-blue-400 dark:text-blue-400 [body.light-theme_&]:text-blue-600 flex items-center gap-2 mt-0.5">
+                  <i class="ph-bold ph-buildings text-base"></i>
+                  <span>Daffodil International University (DIU)</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Prominent Metric Badges -->
+            <div class="flex flex-wrap items-center gap-3 flex-shrink-0">
+              <!-- CGPA Highlight Card -->
+              <div class="px-4 py-2.5 rounded-2xl bg-blue-500/10 border-2 border-blue-500/40 flex items-center gap-2.5 shadow-sm">
+                <i class="ph-bold ph-seal-check text-blue-500 text-xl"></i>
+                <div>
+                  <span class="text-[9px] font-mono uppercase font-black text-blue-400 dark:text-blue-300 block leading-tight">CGPA SCORE</span>
+                  <span class="text-base font-mono font-black text-blue-400 dark:text-blue-300 leading-tight">3.57 <span class="text-xs font-semibold opacity-70">/ 4.00</span></span>
+                </div>
+              </div>
+
+              <!-- Passing Year Status Card -->
+              <div class="px-4 py-2.5 rounded-2xl bg-emerald-500/10 border-2 border-emerald-500/40 flex items-center gap-2.5 shadow-sm">
+                <span class="status-pulse"></span>
+                <div>
+                  <span class="text-[9px] font-mono uppercase font-black text-emerald-400 dark:text-emerald-300 block leading-tight">CURRENT STATUS</span>
+                  <span class="text-xs font-mono font-bold text-emerald-400 dark:text-emerald-300 leading-tight">Passing 2026 (Last Semester)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Structured Key Information Grid -->
+          <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs relative z-10">
+            <div class="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+              <span class="font-mono text-[10px] uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mb-1">MAJOR FOCUS</span>
+              <p class="font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900">Software Engineering & QA Testing</p>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+              <span class="font-mono text-[10px] uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mb-1">CORE SUBJECTS</span>
+              <p class="font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900">Algorithms, Data Structures & DBMS</p>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+              <span class="font-mono text-[10px] uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mb-1">PROGRAM</span>
+              <p class="font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900">4-Year Professional B.Sc. in CSE</p>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+              <span class="font-mono text-[10px] uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mb-1">CAMPUS LOCATION</span>
+              <p class="font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 flex items-center gap-1.5">
+                <i class="ph-bold ph-map-pin text-blue-500"></i>
+                <span>Dhaka, Bangladesh</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Grid for HSC & SSC -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- 2. Higher Secondary Certificate (HSC) -->
+          <div class="luxury-card p-6 sm:p-7 rounded-3xl border-l-4 border-l-amber-500 relative overflow-hidden group flex flex-col justify-between shadow-md">
+            <div>
+              <!-- Top Row: Icon + Highlight Score Badge -->
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <i class="ph-bold ph-book-open text-2xl"></i>
+                </div>
+                
+                <!-- Prominent GPA Badge -->
+                <div class="px-3.5 py-2 rounded-2xl bg-amber-500/10 border-2 border-amber-500/40 flex items-center gap-2 shadow-sm">
+                  <i class="ph-bold ph-star text-amber-500 text-base"></i>
+                  <div>
+                    <span class="text-[9px] font-mono uppercase font-black text-amber-600 dark:text-amber-400 block leading-tight">RESULT SCORE</span>
+                    <span class="text-sm font-mono font-black text-amber-600 dark:text-amber-400 leading-tight">GPA: 5.00 <span class="text-[10px] font-bold opacity-80">/ 5.00</span></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Degree & College Info -->
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 mb-1 border border-amber-500/20">
+                HIGHER SECONDARY (HSC)
+              </span>
+              <h3 class="text-xl font-extrabold tracking-tight text-white dark:text-white [body.light-theme_&]:text-slate-900 mb-1">
+                Higher Secondary Certificate
+              </h3>
+              <p class="text-sm sm:text-base font-bold text-amber-400 dark:text-amber-400 [body.light-theme_&]:text-amber-600 mb-4 flex items-center gap-1.5">
+                <i class="ph-bold ph-buildings text-base"></i>
+                <span>Rajshahi Govt. City College</span>
+              </p>
+
+              <!-- Key Info Stat Boxes -->
+              <div class="grid grid-cols-2 gap-2.5 mb-4">
+                <div class="p-3 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+                  <span class="text-[9px] font-mono uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block">DISCIPLINE</span>
+                  <span class="text-xs font-black text-white dark:text-white [body.light-theme_&]:text-slate-900 flex items-center gap-1.5 mt-1">
+                    <i class="ph-bold ph-atom text-amber-500 text-sm"></i>
+                    <span>Science Group</span>
+                  </span>
+                </div>
+                <div class="p-3 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+                  <span class="text-[9px] font-mono uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block">PASSING YEAR</span>
+                  <span class="text-xs font-black text-white dark:text-white [body.light-theme_&]:text-slate-900 flex items-center gap-1.5 mt-1">
+                    <i class="ph-bold ph-calendar-check text-amber-500 text-sm"></i>
+                    <span>2020 (Completed)</span>
+                  </span>
+                </div>
+              </div>
+
+              <p class="text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed font-medium">
+                Higher secondary academic curriculum in Science division with <strong class="text-amber-400 dark:text-amber-400 [body.light-theme_&]:text-amber-600 font-bold">GPA 5.00 (Out of 5.00)</strong>, focusing on Higher Mathematics, Physics, Chemistry, and ICT.
+              </p>
+            </div>
+
+            <!-- Footer Bar -->
+            <div class="pt-4 mt-5 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+              <span class="inline-flex items-center gap-1.5">
+                <i class="ph-bold ph-atom text-amber-500"></i>
+                <span>Science Division</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5">
+                <i class="ph-bold ph-map-pin text-amber-500"></i>
+                <span>Rajshahi, Bangladesh</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- 3. Secondary School Certificate (SSC) -->
+          <div class="luxury-card p-6 sm:p-7 rounded-3xl border-l-4 border-l-purple-500 relative overflow-hidden group flex flex-col justify-between shadow-md">
+            <div>
+              <!-- Top Row: Icon + Highlight Score Badge -->
+              <div class="flex items-start justify-between gap-3 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <i class="ph-bold ph-buildings text-2xl"></i>
+                </div>
+                
+                <!-- Prominent GPA Badge -->
+                <div class="px-3.5 py-2 rounded-2xl bg-purple-500/10 border-2 border-purple-500/40 flex items-center gap-2 shadow-sm">
+                  <i class="ph-bold ph-star text-purple-400 text-base"></i>
+                  <div>
+                    <span class="text-[9px] font-mono uppercase font-black text-purple-400 dark:text-purple-300 block leading-tight">RESULT SCORE</span>
+                    <span class="text-sm font-mono font-black text-purple-400 dark:text-purple-300 leading-tight">GPA: 5.00 <span class="text-[10px] font-bold opacity-80">/ 5.00</span></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Degree & School Info -->
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-500/15 text-purple-600 dark:text-purple-400 mb-1 border border-purple-500/20">
+                SECONDARY SCHOOL (SSC)
+              </span>
+              <h3 class="text-xl font-extrabold tracking-tight text-white dark:text-white [body.light-theme_&]:text-slate-900 mb-1">
+                Secondary School Certificate
+              </h3>
+              <p class="text-sm sm:text-base font-bold text-purple-400 dark:text-purple-400 [body.light-theme_&]:text-purple-600 mb-4 flex items-center gap-1.5">
+                <i class="ph-bold ph-graduation-cap text-base"></i>
+                <span>Rahimanpur High School</span>
+              </p>
+
+              <!-- Key Info Stat Boxes -->
+              <div class="grid grid-cols-2 gap-2.5 mb-4">
+                <div class="p-3 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+                  <span class="text-[9px] font-mono uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block">DISCIPLINE</span>
+                  <span class="text-xs font-black text-white dark:text-white [body.light-theme_&]:text-slate-900 flex items-center gap-1.5 mt-1">
+                    <i class="ph-bold ph-atom text-purple-400 text-sm"></i>
+                    <span>Science Group</span>
+                  </span>
+                </div>
+                <div class="p-3 rounded-2xl bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10">
+                  <span class="text-[9px] font-mono uppercase font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block">PASSING YEAR</span>
+                  <span class="text-xs font-black text-white dark:text-white [body.light-theme_&]:text-slate-900 flex items-center gap-1.5 mt-1">
+                    <i class="ph-bold ph-calendar-check text-purple-400 text-sm"></i>
+                    <span>2018 (Completed)</span>
+                  </span>
+                </div>
+              </div>
+
+              <p class="text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed font-medium">
+                Secondary foundational education in Science group with <strong class="text-purple-400 dark:text-purple-400 [body.light-theme_&]:text-purple-600 font-bold">GPA 5.00 (Out of 5.00)</strong>, building strong analytical thinking and mathematics fundamentals.
+              </p>
+            </div>
+
+            <!-- Footer Bar -->
+            <div class="pt-4 mt-5 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono font-bold text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+              <span class="inline-flex items-center gap-1.5">
+                <i class="ph-bold ph-atom text-purple-400"></i>
+                <span>Science Division</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5">
+                <i class="ph-bold ph-map-pin text-purple-400"></i>
+                <span>Bangladesh</span>
+              </span>
             </div>
           </div>
 
