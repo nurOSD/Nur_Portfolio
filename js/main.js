@@ -160,7 +160,7 @@ function updateThemeIcon(isLight) {
 
 // --- 7. Scrollspy Active Navbar Link ---
 function initScrollSpy() {
-  const sectionIds = ['hero', 'about', 'education', 'contact'];
+  const sectionIds = ['hero', 'about', 'education', 'skills', 'contact'];
   const navBtns = document.querySelectorAll('.nav-btn');
   
   window.addEventListener('scroll', () => {
@@ -184,6 +184,29 @@ function initScrollSpy() {
         btn.classList.add('active');
       }
     });
+  });
+}
+
+// --- 8. Interactive Skill Category Filter ---
+function filterSkills(cat) {
+  playSubtleClick();
+  const rows = document.querySelectorAll('.skill-row');
+  const btns = document.querySelectorAll('.skill-tab-btn');
+  
+  btns.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-filter') === cat) {
+      btn.classList.add('active');
+    }
+  });
+
+  rows.forEach(row => {
+    const rowCat = row.getAttribute('data-category');
+    if (cat === 'all' || rowCat === cat) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
   });
 }
 

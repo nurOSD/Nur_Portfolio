@@ -285,3 +285,125 @@ body.light-theme .nav-btn:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   ANIMATED TECHNICAL SKILLS TABLE & SIDE ANIMATIONS
+   ========================================================================== */
+/* Skill Filter Tabs */
+.skill-tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  outline: none;
+}
+
+.skill-tab-btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--text-primary);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.skill-tab-btn.active {
+  background: var(--accent);
+  color: #ffffff !important;
+  border-color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 2px 8px -2px rgba(59, 130, 246, 0.5);
+}
+
+body.light-theme .skill-tab-btn {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.skill-row {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Side accent light-up beam on row hover */
+.skill-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 3.5px;
+  border-radius: 4px;
+  background: var(--side-accent, #3b82f6);
+  opacity: 0;
+  transform: scaleY(0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-row:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+  box-shadow: 0 0 14px var(--side-accent, #3b82f6);
+}
+
+.skill-row:hover {
+  background: rgba(59, 130, 246, 0.04);
+  transform: translateX(6px);
+}
+
+body.light-theme .skill-row:hover {
+  background: rgba(37, 99, 235, 0.03);
+}
+
+/* Floating Logo Animation */
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float-logo {
+  animation: floatLogo 3.5s ease-in-out infinite;
+}
+
+.logo-box {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-row:hover .logo-box {
+  transform: scale(1.12) translateY(-2px);
+  filter: drop-shadow(0 4px 14px var(--logo-glow, rgba(59, 130, 246, 0.4)));
+}
+
+/* Live Animated Radar Beacon on the Side */
+.radar-beacon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+}
+
+.radar-beacon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #22c55e;
+  animation: radarWave 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.radar-beacon::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22c55e;
+}
+
+@keyframes radarWave {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
