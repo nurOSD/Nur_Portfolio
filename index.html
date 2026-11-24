@@ -39,8 +39,57 @@
 </head>
 <body class="antialiased min-h-screen relative overflow-x-hidden">
 
-  <!-- Ambient Glow -->
-  <div class="ambient-glow"></div>
+  <!-- Cinematic Futuristic Portfolio Opening Intro Sequence -->
+  <div id="portfolio-loader" title="Click anywhere to skip">
+    <div class="max-w-md w-full px-6 flex flex-col items-center text-center">
+      <!-- Animated QA Emblem -->
+      <div class="w-16 h-16 rounded-2xl bg-blue-500/15 border-2 border-blue-500/50 flex items-center justify-center text-blue-400 mb-6 shadow-2xl relative">
+        <i class="ph-bold ph-shield-check text-3xl animate-pulse"></i>
+        <div class="absolute -inset-2 rounded-2xl border border-blue-500/30 animate-ping"></div>
+      </div>
+      
+      <!-- Monospace Boot Status -->
+      <div class="font-mono text-xs text-blue-400 uppercase tracking-widest font-bold mb-2 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>INITIALIZING QA ENVIRONMENT</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
+        MD. NUR ISLAM
+      </h1>
+
+      <!-- Progress Line Scanner -->
+      <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden mb-3 relative">
+        <div id="loader-progress" class="h-full bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400 rounded-full transition-all duration-700 w-0"></div>
+      </div>
+
+      <div class="flex items-center justify-between w-full text-[10px] font-mono text-zinc-500">
+        <span>SECURITY VERIFIED: 100%</span>
+        <span>ID: 0242310005101896</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Neon Arrow Mouse Cursor (Desktop) -->
+  <div id="custom-cursor-arrow" class="custom-cursor-arrow" aria-hidden="true">
+    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
+      <path d="M3 2L10.5 20.5L14 13.5L21 10L3 2Z" fill="#22c55e" stroke="#14532d" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M14 14L22 22" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- Colorful Particle Burst & Sparkle Trail Canvas -->
+  <canvas id="cursor-splash-canvas" aria-hidden="true"></canvas>
+
+  <!-- Dynamic Living Animated Background Canvas & Aurora Mesh -->
+  <div class="animated-bg-container" aria-hidden="true">
+    <canvas id="bg-canvas"></canvas>
+    <div class="aurora-orb aurora-1"></div>
+    <div class="aurora-orb aurora-2"></div>
+    <div class="aurora-orb aurora-3"></div>
+    <div class="aurora-orb aurora-4"></div>
+    <div class="cyber-grid-overlay"></div>
+  </div>
   
   <!-- Subtle Grain Overlay -->
   <div class="grain-overlay"></div>
@@ -66,6 +115,8 @@
         <a href="#about" class="nav-btn">About Me</a>
         <a href="#education" class="nav-btn">Education</a>
         <a href="#skills" class="nav-btn">Skills</a>
+        <a href="#projects" class="nav-btn">Projects</a>
+        <a href="#contact" class="nav-btn">Contact</a>
       </div>
 
       <!-- Action Controls on Right -->
@@ -142,7 +193,7 @@
               <i class="ph-bold ph-arrow-down text-xs"></i>
             </a>
 
-            <button onclick="copyEmail('mdnurislam@example.com')" class="magnetic-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full luxury-card font-medium text-sm transition-all">
+            <button onclick="copyEmail('islam2305101896@diu.edu.bd')" class="magnetic-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full luxury-card font-medium text-sm transition-all">
               <i class="ph ph-copy text-base text-blue-500"></i>
               <span class="font-mono text-xs">Copy Email</span>
             </button>
@@ -154,13 +205,188 @@
           </div>
         </div>
 
-        <!-- Big Hero Portrait Photo -->
-        <div class="lg:col-span-4 order-1 lg:order-2 flex justify-center">
-          <div class="relative group">
-            <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-purple-500 to-emerald-500 rounded-3xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"></div>
-            <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border-2 border-white/20 dark:border-white/10 shadow-2xl bg-[#121316]">
-              <img src="assets/images/profile.jpg" alt="MD. NUR ISLAM" class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500">
+        <!-- Interactive 3D Hanging Lanyard ID Badge Card (Portfolio Opening Feature) -->
+        <div class="lg:col-span-4 order-1 lg:order-2 flex flex-col items-center justify-center relative -mt-6 sm:mt-0">
+          
+          <!-- Realistic Lanyard Ribbon & Clip System -->
+          <div class="lanyard-rig" id="lanyard-rig">
+            <!-- Woven Fabric Lanyard Strap -->
+            <div class="lanyard-strap"></div>
+            <!-- Metallic Buckle & Ring -->
+            <div class="lanyard-buckle"></div>
+            <div class="lanyard-carabiner"></div>
+            <div class="lanyard-clip-joint"></div>
+
+            <!-- 3D Card Perspective Wrapper -->
+            <div class="badge-card-container" id="badge-card-container" onclick="toggleBadgeFlip()" title="Click to flip card">
+              <div class="badge-card-inner" id="badge-card-inner">
+                
+                <!-- ========== FRONT OF ID BADGE ========== -->
+                <div class="badge-card-front flex flex-col justify-between">
+                  <!-- Punch Hole at top for Clip -->
+                  <div>
+                    <div class="badge-punch-hole"></div>
+
+                    <!-- Header: DIU QA Pass -->
+                    <div class="flex items-center justify-between px-4 pt-1.5 pb-2 border-b border-black/10 dark:border-white/10">
+                      <div class="flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/30 text-[10px] font-mono font-bold text-amber-400">
+                        <i class="ph-bold ph-identification-badge"></i>
+                        <span>DIU • CSE</span>
+                      </div>
+                      <span class="text-[9px] font-mono uppercase tracking-widest text-zinc-400 font-semibold">ENGINEER ID</span>
+                      <div class="w-5 h-5 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xs">
+                        <i class="ph-bold ph-shield-check"></i>
+                      </div>
+                    </div>
+
+                    <!-- Profile Photo with Glowing Ring -->
+                    <div class="flex flex-col items-center pt-3 px-4">
+                      <div class="relative mb-2">
+                        <div class="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-blue-500 via-emerald-400 to-purple-500 shadow-md">
+                          <img src="assets/images/profile.jpg" alt="MD. NUR ISLAM" class="w-full h-full rounded-full object-cover object-top border-2 border-[#09090b]">
+                        </div>
+                        <span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[#09090b] flex items-center justify-center" title="Online & Available">
+                          <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                        </span>
+                      </div>
+
+                      <!-- Name & Verified Check -->
+                      <div class="flex items-center gap-1 mb-0.5">
+                        <h3 class="text-sm font-extrabold text-white dark:text-white [body.light-theme_&]:text-slate-900 tracking-tight">
+                          Md. Nur Islam
+                        </h3>
+                        <i class="ph-fill ph-check-circle text-blue-400 text-xs" title="Verified QA Engineer"></i>
+                      </div>
+                      
+                      <span class="text-[11px] font-semibold text-blue-400 font-mono tracking-tight mb-2">
+                        Quality Assurance Engineer
+                      </span>
+
+                      <!-- Core Skill Pills -->
+                      <div class="flex flex-wrap items-center justify-center gap-1 mb-2.5">
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                          &lt;/&gt; Manual QA
+                        </span>
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                          Jira
+                        </span>
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                          API Testing
+                        </span>
+                      </div>
+
+                      <!-- Institution & Status Details -->
+                      <div class="w-full py-1.5 px-2.5 rounded-xl bg-black/20 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 text-[10px] font-mono space-y-1 mb-2">
+                        <div class="flex items-center justify-between text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700">
+                          <span class="text-zinc-400 flex items-center gap-1"><i class="ph ph-graduation-cap"></i> CSE, DIU</span>
+                          <span class="font-bold">Final Year</span>
+                        </div>
+                        <div class="flex items-center justify-between text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700">
+                          <span class="text-zinc-400 flex items-center gap-1"><i class="ph ph-map-pin"></i> Dhaka, BD</span>
+                          <span class="text-emerald-400 font-semibold">● Available</span>
+                        </div>
+                      </div>
+
+                      <!-- Mini Tech Logos -->
+                      <div class="flex items-center justify-center gap-1.5 py-0.5">
+                        <span class="w-5 h-5 rounded bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-[10px] font-mono font-bold text-blue-400" title="C Language">C</span>
+                        <span class="w-5 h-5 rounded bg-red-500/10 border border-red-500/20 flex items-center justify-center text-[10px] font-mono font-bold text-red-400" title="Java">Ja</span>
+                        <span class="w-5 h-5 rounded bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[10px] font-mono font-bold text-amber-400" title="JavaScript">JS</span>
+                        <span class="w-5 h-5 rounded bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-[10px] font-mono font-bold text-emerald-400" title="MySQL">SQL</span>
+                        <span class="w-5 h-5 rounded bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-[10px] font-mono font-bold text-sky-400" title="Jira">Jira</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Barcode at bottom -->
+                  <div class="w-full pt-1.5 pb-2 border-t border-black/10 dark:border-white/10 flex flex-col items-center">
+                    <svg class="w-40 h-5 opacity-75 text-zinc-300 dark:text-zinc-400" viewBox="0 0 160 25" preserveAspectRatio="none">
+                      <rect x="0" y="0" width="3" height="20" fill="currentColor"/>
+                      <rect x="5" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="8" y="0" width="4" height="20" fill="currentColor"/>
+                      <rect x="14" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="18" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="21" y="0" width="3" height="20" fill="currentColor"/>
+                      <rect x="26" y="0" width="5" height="20" fill="currentColor"/>
+                      <rect x="33" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="37" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="40" y="0" width="4" height="20" fill="currentColor"/>
+                      <rect x="46" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="50" y="0" width="3" height="20" fill="currentColor"/>
+                      <rect x="55" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="58" y="0" width="5" height="20" fill="currentColor"/>
+                      <rect x="65" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="69" y="0" width="4" height="20" fill="currentColor"/>
+                      <rect x="75" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="78" y="0" width="3" height="20" fill="currentColor"/>
+                      <rect x="83" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="87" y="0" width="4" height="20" fill="currentColor"/>
+                      <rect x="93" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="97" y="0" width="5" height="20" fill="currentColor"/>
+                      <rect x="104" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="107" y="0" width="3" height="20" fill="currentColor"/>
+                      <rect x="112" y="0" width="4" height="20" fill="currentColor"/>
+                      <rect x="118" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="122" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="125" y="0" width="5" height="20" fill="currentColor"/>
+                      <rect x="132" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="136" y="0" width="3" height="20" fill="currentColor"/>
+                      <rect x="141" y="0" width="1" height="20" fill="currentColor"/>
+                      <rect x="144" y="0" width="4" height="20" fill="currentColor"/>
+                      <rect x="150" y="0" width="2" height="20" fill="currentColor"/>
+                      <rect x="154" y="0" width="4" height="20" fill="currentColor"/>
+                    </svg>
+                    <span class="text-[9px] font-mono font-bold tracking-widest text-zinc-400">ID: 0242310005101896</span>
+                  </div>
+                </div>
+
+                <!-- ========== BACK OF ID BADGE (FLIP SIDE) ========== -->
+                <div class="badge-card-back flex flex-col justify-between">
+                  <div>
+                    <div class="badge-punch-hole"></div>
+
+                    <!-- Holographic Security Stripe -->
+                    <div class="holo-stripe w-full h-7 mb-3"></div>
+
+                    <div class="px-4 py-1 flex flex-col items-center text-center">
+                      <span class="text-[9px] font-mono uppercase tracking-widest text-blue-400 font-bold mb-0.5">INSTITUTIONAL CREDENTIAL</span>
+                      <h4 class="text-xs font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 mb-2">
+                        Daffodil International University
+                      </h4>
+
+                      <!-- QR Code to Contact Directly -->
+                      <div class="p-2 rounded-xl bg-white shadow-md mb-2">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=mailto:islam2305101896@diu.edu.bd" alt="Scan to Email" class="w-16 h-16">
+                      </div>
+
+                      <span class="text-[8px] font-mono text-zinc-400 mb-2">SCAN TO EMAIL QA ENGINEER</span>
+
+                      <div class="w-full text-left p-2 rounded-xl bg-black/20 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 text-[9px] font-mono space-y-0.5 mb-2">
+                        <div><span class="text-zinc-400">Phone:</span> <strong class="text-amber-400 font-bold">01763087342</strong></div>
+                        <div><span class="text-zinc-400">Email:</span> <strong class="text-blue-400 break-all">islam2305101896@diu.edu.bd</strong></div>
+                      </div>
+
+                      <div class="w-full border-t border-black/10 dark:border-white/10 pt-1.5 flex items-center justify-between text-[8px] font-mono text-zinc-400">
+                        <span>SIGNATURE: <em class="font-editorial text-xs text-blue-400 not-italic">Md. Nur Islam</em></span>
+                        <span class="text-emerald-400 font-bold">QA PASS</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pb-2 text-[9px] font-mono text-zinc-500">
+                    Click anywhere to flip front
+                  </div>
+                </div>
+
+              </div>
             </div>
+
+            <!-- Interactive Gesture Caption -->
+            <div class="mt-3 flex items-center gap-1.5 text-[11px] font-mono text-zinc-400 hover:text-blue-400 transition-colors cursor-pointer" onclick="toggleBadgeFlip()">
+              <i class="ph-bold ph-arrows-clockwise text-blue-400"></i>
+              <span>Drag to swing • Click card to flip</span>
+            </div>
+
           </div>
         </div>
 
@@ -1387,6 +1613,593 @@
       </div>
     </section>
 
+    <!-- ==================== 5. FEATURED PROJECTS SECTION ==================== -->
+    <section id="projects" class="mb-28 sm:mb-36 scroll-mt-28">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            <span class="font-mono text-xs text-blue-500 uppercase tracking-widest font-semibold">ENGINEERING &amp; QA PORTFOLIO</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white dark:text-white [body.light-theme_&]:text-slate-900">
+            Featured Projects &amp; QA Case Studies
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-600 font-mono font-medium max-w-xs sm:text-right">
+          Authentic lab-verified systems, manual/automated QA testing suites, and compiler/graphics implementations at Daffodil International University.
+        </p>
+      </div>
+
+      <!-- Interactive Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-10 p-2.5 rounded-2xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/10 dark:border-white/10">
+        <button onclick="filterProjects('all')" class="project-tab-btn active inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all" data-filter="all">
+          <i class="ph-bold ph-squares-four text-sm"></i>
+          <span>All Projects (6)</span>
+        </button>
+        <button onclick="filterProjects('qa')" class="project-tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all" data-filter="qa">
+          <i class="ph-bold ph-shield-check text-sm text-blue-400"></i>
+          <span>QA &amp; Software Testing (2)</span>
+        </button>
+        <button onclick="filterProjects('systems')" class="project-tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all" data-filter="systems">
+          <i class="ph-bold ph-cpu text-sm text-emerald-400"></i>
+          <span>Systems &amp; Backend (2)</span>
+        </button>
+        <button onclick="filterProjects('graphics-compilers')" class="project-tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all" data-filter="graphics-compilers">
+          <i class="ph-bold ph-code-block text-sm text-amber-400"></i>
+          <span>Compilers &amp; Graphics (2)</span>
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8" id="projects-grid">
+
+        <!-- ==================== PROJECT 1: SKYBOUND AIRWAYS (QA FLAGSHIP) ==================== -->
+        <article class="project-card luxury-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-blue-500/30 group hover:border-blue-500/60 shadow-xl" data-category="qa all">
+          <div>
+            <!-- Top Meta Bar -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div class="flex items-center gap-2.5">
+                <div class="project-icon-box w-11 h-11 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400 shadow-sm flex-shrink-0">
+                  <i class="ph-bold ph-airplane-tilt text-xl"></i>
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                    <span>FLAGSHIP QA SUITE</span>
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mt-0.5">CSE442 • SQA &amp; Testing</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-black/20 dark:bg-white/5 border border-black/10 dark:border-white/10 text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+                Assignment 01
+              </span>
+            </div>
+
+            <!-- Title & Role -->
+            <h3 class="text-xl font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 group-hover:text-blue-400 transition-colors mb-2 tracking-tight">
+              SkyBound Airways — Flight Reservation QA Testing Suite
+            </h3>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs font-mono font-semibold text-blue-300 dark:text-blue-300 [body.light-theme_&]:text-blue-700 mb-4">
+              <i class="ph-bold ph-user-circle text-sm text-blue-400"></i>
+              <span>Role: Lead QA Engineer (ID: 0242310005101896)</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed mb-5">
+              Comprehensive manual &amp; functional quality assurance lifecycle for a high-concurrency flight booking system. Formulated complete Requirements Traceability Matrix (RTM), authored rigorous boundary-value test matrices for temporary seat locks, and triaged critical race-condition defects in Jira.
+            </p>
+
+            <!-- Key QA Contributions Box -->
+            <div class="rounded-2xl bg-black/20 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 p-4 mb-5 space-y-2.5 text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 font-medium">
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-blue-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Requirements Traceability Matrix (RTM):</strong> 100% bidirectional test coverage mapping REQ-01 to REQ-04 (Seat Hold, Checkout, Admin Override, Standby Queue).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-blue-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Boundary Value Analysis:</strong> 6 detailed test cases (<code class="font-mono text-blue-400 font-bold">TC-1896-01 to 06</code>) testing 10-minute hold expiry and 200/200 max passenger boundary limits.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-bug text-rose-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Defect Triage &amp; Lifecycle:</strong> Identified and documented high-severity <code class="font-mono text-rose-400 font-bold">BUG-1896-A</code> (UTC midnight concurrency deadlock) and <code class="font-mono text-amber-400 font-bold">BUG-1896-B</code> (UI manifest error).</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Tech Stack & Verification Badge -->
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">Manual Testing</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">Jira</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">RTM</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">Boundary Value Analysis</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">Equivalence Partitioning</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">Defect Lifecycle</span>
+            </div>
+
+            <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-emerald-400 font-semibold flex items-center gap-1.5">
+                <i class="ph-bold ph-shield-check text-sm"></i>
+                <span>QA Test Matrix Verified</span>
+              </span>
+              <span class="text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">Daffodil Int. University</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== PROJECT 2: CUSTOM HTTP MULTI-THREADED WEB SERVER ==================== -->
+        <article class="project-card luxury-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-emerald-500/30 group hover:border-emerald-500/60 shadow-xl" data-category="systems all">
+          <div>
+            <!-- Top Meta Bar -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div class="flex items-center gap-2.5">
+                <div class="project-icon-box w-11 h-11 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-sm flex-shrink-0">
+                  <i class="ph-bold ph-hard-drives text-xl"></i>
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>NETWORKING &amp; OS</span>
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mt-0.5">CSE324 • Operating Systems Lab</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-black/20 dark:bg-white/5 border border-black/10 dark:border-white/10 text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+                Dec 2025
+              </span>
+            </div>
+
+            <!-- Title & Role -->
+            <h3 class="text-xl font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 group-hover:text-emerald-400 transition-colors mb-2 tracking-tight">
+              Custom HTTP/1.1 Multi-Threaded Web Server with Auth &amp; File Management
+            </h3>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono font-semibold text-emerald-300 dark:text-emerald-300 [body.light-theme_&]:text-emerald-700 mb-4">
+              <i class="ph-bold ph-user-circle text-sm text-emerald-400"></i>
+              <span>Role: Server Core &amp; Network Architect (Server.java, ClientHandler.java)</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed mb-5">
+              Low-level, framework-free HTTP/1.1 web server built from scratch using raw Java TCP Sockets (<code class="font-mono text-emerald-400">java.net.ServerSocket</code>). Architected a fixed-size 8-thread worker pool, custom streaming multipart parser for binary uploads, SHA-256 salted password hashing, and user directory isolation.
+            </p>
+
+            <!-- Key Engineering Highlights Box -->
+            <div class="rounded-2xl bg-black/20 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 p-4 mb-5 space-y-2.5 text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 font-medium">
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-emerald-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Framework-Free Core:</strong> Direct raw TCP socket programming implementing HTTP/1.1 RFC parsing (GET, POST, headers, MIME types) without frameworks.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-emerald-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>8-Thread Concurrency Pool:</strong> Fixed worker thread pool preventing thread exhaustion and ensuring zero request starvation under concurrent loads.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-shield-check text-emerald-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Security Architecture:</strong> SHA-256 salted hashing, UUID session management (<code class="font-mono text-emerald-400 font-bold">HttpOnly</code>, 30-min expiry), and directory traversal sanitization.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Tech Stack & Verification Badge -->
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Java</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Socket Programming</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Multithreading</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">HTTP/1.1 Protocol</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">SHA-256</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Cybersecurity</span>
+            </div>
+
+            <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-emerald-400 font-semibold flex items-center gap-1.5">
+                <i class="ph-bold ph-certificate text-sm"></i>
+                <span>Supervised by Md Mehefujur Rahman Mubin</span>
+              </span>
+              <span class="text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">Group 3 • DIU</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== PROJECT 3: COMPILER FRONTEND LEXICAL ANALYZER ==================== -->
+        <article class="project-card luxury-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-purple-500/30 group hover:border-purple-500/60 shadow-xl" data-category="graphics-compilers all">
+          <div>
+            <!-- Top Meta Bar -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div class="flex items-center gap-2.5">
+                <div class="project-icon-box w-11 h-11 rounded-2xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-sm flex-shrink-0">
+                  <i class="ph-bold ph-code-block text-xl"></i>
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-500/10 text-purple-400 border border-purple-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+                    <span>LANGUAGE ENGINEERING</span>
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mt-0.5">CSE314 • Compiler Design Lab</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-black/20 dark:bg-white/5 border border-black/10 dark:border-white/10 text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+                Aug 2025
+              </span>
+            </div>
+
+            <!-- Title & Role -->
+            <h3 class="text-xl font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 group-hover:text-purple-400 transition-colors mb-2 tracking-tight">
+              Lexical Analyzer with Syntax Error Correction &amp; Symbol Table
+            </h3>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs font-mono font-semibold text-purple-300 dark:text-purple-300 [body.light-theme_&]:text-purple-700 mb-4">
+              <i class="ph-bold ph-user-circle text-sm text-purple-400"></i>
+              <span>Role: Tokenization &amp; Syntax Checking Backend Lead</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed mb-5">
+              Interactive desktop compiler frontend constructed with Java Swing. Implements regular expression-driven tokenization, multi-category lexical classification, real-time syntax checking with automatic error correction recommendations, and dynamic symbol table management.
+            </p>
+
+            <!-- Key Engineering Highlights Box -->
+            <div class="rounded-2xl bg-black/20 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 p-4 mb-5 space-y-2.5 text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 font-medium">
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-purple-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Regex Lexical Scanner:</strong> Classifies raw code into 6 lexical classes: Keywords, Identifiers, Operators, Delimiters, Constants, and Functions.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-purple-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Intelligent Syntax Diagnostic:</strong> Automatically detects missing semicolons, unbalanced braces <code class="font-mono text-purple-400 font-bold">{ }</code>, and unclosed quotes with line-numbered fixes.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-table text-purple-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Dynamic Symbol Table:</strong> Real-time mapping of variable identifiers, types, and scoping with instant reset capabilities.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Tech Stack & Verification Badge -->
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">Java</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">Java Swing GUI</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">Compiler Design</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">Regex Engine</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">Lexical Analysis</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">Symbol Table</span>
+            </div>
+
+            <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-purple-400 font-semibold flex items-center gap-1.5">
+                <i class="ph-bold ph-certificate text-sm"></i>
+                <span>Supervised by Md. Ashaf Uddaula</span>
+              </span>
+              <span class="text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">Group D • DIU</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== PROJECT 4: ARTIFICIAL LIFE EVOLUTION SIMULATOR ==================== -->
+        <article class="project-card luxury-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-amber-500/30 group hover:border-amber-500/60 shadow-xl" data-category="graphics-compilers all">
+          <div>
+            <!-- Top Meta Bar -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div class="flex items-center gap-2.5">
+                <div class="project-icon-box w-11 h-11 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-sm flex-shrink-0">
+                  <i class="ph-bold ph-dna text-xl"></i>
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span>GRAPHICS &amp; EVOLUTIONARY AI</span>
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mt-0.5">CSE412 • Computer Graphics Lab</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-black/20 dark:bg-white/5 border border-black/10 dark:border-white/10 text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+                Apr 2026
+              </span>
+            </div>
+
+            <!-- Title & Role -->
+            <h3 class="text-xl font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 group-hover:text-amber-400 transition-colors mb-2 tracking-tight">
+              Artificial Life Evolution Simulator (2D/3D OpenGL Engine)
+            </h3>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs font-mono font-semibold text-amber-300 dark:text-amber-300 [body.light-theme_&]:text-amber-700 mb-4">
+              <i class="ph-bold ph-user-circle text-sm text-amber-400"></i>
+              <span>Role: Core Simulation &amp; Graphics Developer</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed mb-5">
+              Real-time computational ecosystem simulator developed in C using OpenGL and FreeGLUT. Simulates organism movement, collision detection, and generational survival of the fittest governed by a Genetic Algorithm mutating locomotion speed, perception reach, and metabolic efficiency.
+            </p>
+
+            <!-- Key Engineering Highlights Box -->
+            <div class="rounded-2xl bg-black/20 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 p-4 mb-5 space-y-2.5 text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 font-medium">
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-amber-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Genetic Algorithm Engine:</strong> Natural selection model simulating trait inheritance and mutation rates based on food consumption fitness.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-amber-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Rasterization &amp; Transforms:</strong> Built with DDA line algorithm, Midpoint circle drawing, 2D/3D transformations, and double buffering (<code class="font-mono text-amber-400 font-bold">GLUT_DOUBLE</code>).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-chart-line text-amber-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Live Telemetry HUD:</strong> Real-time on-screen population curve tracking, food density counters, and generation timers running at 60 FPS.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Tech Stack & Verification Badge -->
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">C</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">OpenGL</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">FreeGLUT</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">Genetic Algorithms</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">2D/3D Rendering</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">Simulation</span>
+            </div>
+
+            <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-amber-400 font-semibold flex items-center gap-1.5">
+                <i class="ph-bold ph-certificate text-sm"></i>
+                <span>Supervised by Md Mehefujur Rahman Mubin</span>
+              </span>
+              <span class="text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">Group K2 • DIU</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== PROJECT 5: BLOOD BANK MANAGEMENT SYSTEM ==================== -->
+        <article class="project-card luxury-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-rose-500/30 group hover:border-rose-500/60 shadow-xl" data-category="systems all">
+          <div>
+            <!-- Top Meta Bar -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div class="flex items-center gap-2.5">
+                <div class="project-icon-box w-11 h-11 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 shadow-sm flex-shrink-0">
+                  <i class="ph-bold ph-drop text-xl"></i>
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-rose-500/10 text-rose-400 border border-rose-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>
+                    <span>DATABASE ARCHITECTURE</span>
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mt-0.5">CSE312 / CSE222 • DBMS &amp; OOP</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-black/20 dark:bg-white/5 border border-black/10 dark:border-white/10 text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+                Apr 2025
+              </span>
+            </div>
+
+            <!-- Title & Role -->
+            <h3 class="text-xl font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 group-hover:text-rose-400 transition-colors mb-2 tracking-tight">
+              Blood Bank Management System — Relational Database &amp; Desktop Suite
+            </h3>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs font-mono font-semibold text-rose-300 dark:text-rose-300 [body.light-theme_&]:text-rose-700 mb-4">
+              <i class="ph-bold ph-user-circle text-sm text-rose-400"></i>
+              <span>Role: Donor Registry &amp; Relational Query Lead</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed mb-5">
+              Complete blood donor registry and emergency stock allocation software. Implemented a 3NF normalized MySQL database with B-tree indexing for instant multi-criteria donor matching (blood group &amp; district), with strict validation on donation interval eligibility.
+            </p>
+
+            <!-- Key Engineering Highlights Box -->
+            <div class="rounded-2xl bg-black/20 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 p-4 mb-5 space-y-2.5 text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 font-medium">
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-rose-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>3NF Normalized Schema:</strong> Designed normalized relational tables with foreign keys and B-tree indexing for emergency queries under 5ms.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-rose-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Emergency Donor Matching:</strong> Multi-parameter query engine across 8 blood groups and districts with real-time stock availability.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-shield-check text-rose-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Data Integrity Safeguards:</strong> Input validation ensuring National ID uniqueness and enforcing minimum 90-day recovery intervals.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Tech Stack & Verification Badge -->
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">MySQL</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">PHP</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">Java Swing</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">JDBC</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">3NF Normalization</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">CRUD Engine</span>
+            </div>
+
+            <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-rose-400 font-semibold flex items-center gap-1.5">
+                <i class="ph-bold ph-database text-sm"></i>
+                <span>Relational Schema Verified</span>
+              </span>
+              <span class="text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">Group Twinkle • DIU</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== PROJECT 6: CAFÉ MANAGEMENT SYSTEM ==================== -->
+        <article class="project-card luxury-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between border border-cyan-500/30 group hover:border-cyan-500/60 shadow-xl" data-category="qa all">
+          <div>
+            <!-- Top Meta Bar -->
+            <div class="flex items-center justify-between gap-3 mb-5">
+              <div class="flex items-center gap-2.5">
+                <div class="project-icon-box w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-sm flex-shrink-0">
+                  <i class="ph-bold ph-coffee text-xl"></i>
+                </div>
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                    <span>SOFTWARE METRICS &amp; QA</span>
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500 block mt-0.5">CSE315 • Software Engineering</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-black/20 dark:bg-white/5 border border-black/10 dark:border-white/10 text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">
+                Dec 2025
+              </span>
+            </div>
+
+            <!-- Title & Role -->
+            <h3 class="text-xl font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 group-hover:text-cyan-400 transition-colors mb-2 tracking-tight">
+              Café Management System — Agile Workflow, COCOMO &amp; BVA Suite
+            </h3>
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono font-semibold text-cyan-300 dark:text-cyan-300 [body.light-theme_&]:text-cyan-700 mb-4">
+              <i class="ph-bold ph-user-circle text-sm text-cyan-400"></i>
+              <span>Role: Software Metrics Lead &amp; Boundary Value QA</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs sm:text-sm text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 leading-relaxed mb-5">
+              Full-lifecycle café order management, POS billing, and administration system built using Agile Scrum. Applied the COCOMO software cost estimation model for effort-month projection, and authored comprehensive Boundary Value Analysis test matrices for item pricing and order constraints.
+            </p>
+
+            <!-- Key Engineering Highlights Box -->
+            <div class="rounded-2xl bg-black/20 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 p-4 mb-5 space-y-2.5 text-xs text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700 font-medium">
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-cyan-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>COCOMO Cost &amp; Effort Estimation:</strong> Formulated Constructive Cost Model equations to estimate organic effort-months and maintenance factors.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-check-circle text-cyan-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Black-Box QA Testing Suite:</strong> Executed Equivalence Partitioning (EP) and Boundary Value Analysis (BVA) for login authentication and cart quantity limits.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-kanban text-cyan-400 mt-0.5 text-sm flex-shrink-0"></i>
+                <span><strong>Agile Scrum Delivery:</strong> Sprint cycle user stories, relational SQL schema for order tracking, and receipt calculation algorithms.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Tech Stack & Verification Badge -->
+          <div>
+            <div class="flex flex-wrap items-center gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Agile / Scrum</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">COCOMO Estimation</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Black-Box Testing</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">BVA &amp; EP</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">SQL</span>
+              <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Software Metrics</span>
+            </div>
+
+            <div class="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+              <span class="text-cyan-400 font-semibold flex items-center gap-1.5">
+                <i class="ph-bold ph-certificate text-sm"></i>
+                <span>Supervised by Pranto Protim Choudhury</span>
+              </span>
+              <span class="text-zinc-400 dark:text-zinc-400 [body.light-theme_&]:text-slate-500">DIU</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. CONTACT SECTION ==================== -->
+    <section id="contact" class="luxury-card p-8 sm:p-14 rounded-3xl relative overflow-hidden text-center mb-16 scroll-mt-28">
+      
+      <div class="max-w-3xl mx-auto relative z-10">
+        <span class="font-mono text-xs text-blue-500 uppercase tracking-widest font-semibold block mb-3">GET IN TOUCH</span>
+        
+        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mb-4 text-white dark:text-white [body.light-theme_&]:text-slate-900">
+          Looking for a Quality Assurance Engineer to safeguard your software?
+        </h2>
+
+        <p class="opacity-75 text-sm sm:text-base mb-10 max-w-xl mx-auto leading-relaxed text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700">
+          Specialized in Manual &amp; Exploratory Testing, AI-Assisted Test Design, and API Verification. Let's connect to make your software bulletproof.
+        </p>
+
+        <!-- Direct Contact Cards: Name, Email & Phone -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 text-left">
+          
+          <!-- 1. Name Card -->
+          <div class="p-5 rounded-2xl bg-black/20 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 hover:border-blue-500/40 transition-all flex flex-col justify-between group shadow-sm">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                <i class="ph-bold ph-user text-lg"></i>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block font-semibold mb-1">Full Name</span>
+              <h4 class="text-base font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 tracking-tight">Md. Nur Islam</h4>
+            </div>
+            <span class="text-[11px] font-mono text-blue-400 mt-3 block">QA Engineer • DIU</span>
+          </div>
+
+          <!-- 2. Email Card -->
+          <div class="p-5 rounded-2xl bg-black/20 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 hover:border-emerald-500/40 transition-all flex flex-col justify-between group shadow-sm">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                <i class="ph-bold ph-envelope-simple text-lg"></i>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block font-semibold mb-1">University Email</span>
+              <a href="mailto:islam2305101896@diu.edu.bd" class="text-sm font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 hover:text-emerald-400 transition-colors break-all tracking-tight block">
+                islam2305101896@diu.edu.bd
+              </a>
+            </div>
+            <div class="mt-3 pt-2 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-emerald-400">Primary Email</span>
+              <button onclick="copyEmail('islam2305101896@diu.edu.bd')" class="text-xs text-zinc-400 hover:text-emerald-400 flex items-center gap-1 font-mono transition-colors" title="Copy Email">
+                <i class="ph ph-copy text-sm"></i>
+                <span>Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Phone Card -->
+          <div class="p-5 rounded-2xl bg-black/20 dark:bg-white/[0.03] border border-black/10 dark:border-white/10 hover:border-amber-500/40 transition-all flex flex-col justify-between group shadow-sm">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                <i class="ph-bold ph-phone-call text-lg"></i>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block font-semibold mb-1">Direct Phone / WhatsApp</span>
+              <a href="tel:01763087342" class="text-base font-bold text-white dark:text-white [body.light-theme_&]:text-slate-900 hover:text-amber-400 transition-colors tracking-tight block font-mono">
+                01763087342
+              </a>
+            </div>
+            <div class="mt-3 pt-2 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-amber-400">Call / WhatsApp</span>
+              <button onclick="copyPhone('01763087342')" class="text-xs text-zinc-400 hover:text-amber-400 flex items-center gap-1 font-mono transition-colors" title="Copy Phone Number">
+                <i class="ph ph-copy text-sm"></i>
+                <span>Copy</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Primary Call to Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3.5">
+          <a href="mailto:islam2305101896@diu.edu.bd" class="magnetic-btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-500 transition-all shadow-md">
+            <span>Send Email</span>
+            <i class="ph-bold ph-paper-plane-tilt text-sm"></i>
+          </a>
+
+          <a href="tel:01763087342" class="magnetic-btn inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 font-semibold text-sm hover:bg-emerald-600/30 hover:border-emerald-500/50 transition-all">
+            <i class="ph-bold ph-phone text-sm"></i>
+            <span>Call 01763087342</span>
+          </a>
+
+          <button onclick="copyEmail('islam2305101896@diu.edu.bd')" class="magnetic-btn inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full luxury-card font-medium text-sm transition-all text-zinc-300 dark:text-zinc-300 [body.light-theme_&]:text-slate-700">
+            <i class="ph ph-copy text-blue-500"></i>
+            <span>Copy Email Address</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
     <!-- ==================== FOOTER ==================== -->
     <footer class="pt-8 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono opacity-60">
       <div>
@@ -1396,7 +2209,8 @@
       <div class="flex items-center gap-6">
         <a href="https://github.com/nurOSD" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">GitHub</a>
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">LinkedIn</a>
-        <a href="mailto:mdnurislam@example.com" class="hover:text-blue-500 transition-colors">Email</a>
+        <a href="mailto:islam2305101896@diu.edu.bd" class="hover:text-blue-500 transition-colors">Email</a>
+        <a href="tel:01763087342" class="hover:text-blue-500 transition-colors">Phone</a>
       </div>
 
       <div>

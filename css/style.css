@@ -6,20 +6,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Standard Clean Tech Dark (Default) */
-  --bg-primary: #09090b;        /* Standard zinc-950 */
-  --bg-secondary: #121216;
-  --bg-card: #131418;
-  --bg-card-hover: #191b22;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.18);
-  --text-primary: #f4f4f5;
-  --text-muted: #a1a1aa;
-  --text-dim: #71717a;
-  --nav-bg: rgba(18, 18, 22, 0.88);
-  --accent: #3b82f6;            /* Standard Electric Blue */
-  --accent-soft: rgba(59, 130, 246, 0.12);
-  --glow: rgba(59, 130, 246, 0.05);
+  /* Dynamic Deep Tech Obsidian & Midnight Navy (Instead of plain flat black) */
+  --bg-primary: #070913;        /* Deep cosmic midnight obsidian */
+  --bg-secondary: #0c1022;
+  --bg-card: rgba(13, 17, 30, 0.82);
+  --bg-card-hover: rgba(19, 25, 44, 0.9);
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-hover: rgba(56, 189, 248, 0.35);
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --nav-bg: rgba(11, 15, 28, 0.86);
+  --accent: #38bdf8;            /* Electric Cyan / Sky Blue */
+  --accent-soft: rgba(56, 189, 248, 0.14);
+  --glow: rgba(56, 189, 248, 0.08);
 
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Instrument Serif', Georgia, serif;
@@ -28,19 +28,19 @@
 
 /* Standard Clean Tech Light Mode */
 body.light-theme {
-  --bg-primary: #f8fafc;        /* Standard clean slate-50 */
+  --bg-primary: #f8fafc;        /* Clean pearlescent slate-50 */
   --bg-secondary: #f1f5f9;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: #ffffff;
   --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.16);
+  --border-hover: rgba(2, 132, 199, 0.3);
   --text-primary: #0f172a;      /* Deep slate-900 */
   --text-muted: #64748b;
   --text-dim: #94a3b8;
-  --nav-bg: rgba(255, 255, 255, 0.9);
-  --accent: #2563eb;
-  --accent-soft: rgba(37, 99, 235, 0.08);
-  --glow: rgba(37, 99, 235, 0.03);
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --accent: #0284c7;
+  --accent-soft: rgba(2, 132, 199, 0.1);
+  --glow: rgba(2, 132, 199, 0.05);
 }
 
 /* Base resets */
@@ -133,6 +133,8 @@ body {
 /* Standard Luxury Card */
 .luxury-card {
   background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
@@ -140,8 +142,395 @@ body {
 }
 
 body.light-theme .luxury-card {
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
 }
+
+/* ==========================================================================
+   DYNAMIC LIVING ANIMATED BACKGROUND & AURORA MESH
+   ========================================================================== */
+
+.animated-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 0%, #0d1224 0%, #060914 55%, #030408 100%);
+  transition: background 0.4s ease;
+}
+
+body.light-theme .animated-bg-container {
+  background: radial-gradient(circle at 50% 0%, #e0e7ff 0%, #f8fafc 55%, #f1f5f9 100%);
+}
+
+#bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+/* Subtle Cyber Tech Grid Pattern */
+.cyber-grid-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 100%);
+  opacity: 0.7;
+}
+
+body.light-theme .cyber-grid-overlay {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  opacity: 0.55;
+}
+
+/* Living Aurora Orbs with Fluid Organic Drift */
+.aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  -webkit-filter: blur(110px);
+  opacity: 0.55;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Orb 1: Electric Blue / Cyan */
+.aurora-1 {
+  width: 700px;
+  height: 700px;
+  top: -150px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.38) 0%, rgba(37, 99, 235, 0.16) 50%, transparent 70%);
+  animation: driftAurora1 22s ease-in-out infinite alternate;
+}
+
+/* Orb 2: Deep Indigo / Violet */
+.aurora-2 {
+  width: 750px;
+  height: 750px;
+  top: 15%;
+  right: -160px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.32) 0%, rgba(99, 102, 241, 0.14) 50%, transparent 70%);
+  animation: driftAurora2 26s ease-in-out infinite alternate;
+}
+
+/* Orb 3: Emerald Cyan / Teal */
+.aurora-3 {
+  width: 650px;
+  height: 650px;
+  bottom: 8%;
+  left: 8%;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.28) 0%, rgba(16, 185, 129, 0.12) 50%, transparent 70%);
+  animation: driftAurora3 30s ease-in-out infinite alternate;
+}
+
+/* Orb 4: Rose / Warm Sunset */
+.aurora-4 {
+  width: 620px;
+  height: 620px;
+  bottom: -100px;
+  right: 12%;
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.22) 0%, rgba(217, 70, 239, 0.1) 50%, transparent 70%);
+  animation: driftAurora4 24s ease-in-out infinite alternate;
+}
+
+body.light-theme .aurora-1 {
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.5) 0%, transparent 70%);
+}
+body.light-theme .aurora-2 {
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.45) 0%, transparent 70%);
+}
+body.light-theme .aurora-3 {
+  background: radial-gradient(circle, rgba(153, 246, 228, 0.4) 0%, transparent 70%);
+}
+body.light-theme .aurora-4 {
+  background: radial-gradient(circle, rgba(254, 205, 211, 0.4) 0%, transparent 70%);
+}
+
+@keyframes driftAurora1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(140px, 150px) scale(1.18); }
+  100% { transform: translate(50px, 240px) scale(0.92); }
+}
+
+@keyframes driftAurora2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-160px, 120px) scale(1.15); }
+  100% { transform: translate(-90px, 260px) scale(0.9); }
+}
+
+@keyframes driftAurora3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(150px, -130px) scale(1.22); }
+  100% { transform: translate(70px, -60px) scale(0.88); }
+}
+
+@keyframes driftAurora4 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-120px, -160px) scale(1.18); }
+  100% { transform: translate(-50px, -90px) scale(0.92); }
+}
+
+/* ==========================================================================
+   CINEMATIC FUTURISTIC PORTFOLIO OPENING INTRO
+   ========================================================================== */
+
+#portfolio-loader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999999;
+  background: #05070e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.65s;
+}
+
+#portfolio-loader.loaded {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   3D HANGING LANYARD ID BADGE CARD (PORTFOLIO HERO OPENING)
+   ========================================================================== */
+
+.lanyard-rig {
+  position: relative;
+  width: 100%;
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1200px;
+  transform-origin: top center;
+  animation: lanyardSwingIn 2.2s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+}
+
+@keyframes lanyardSwingIn {
+  0%   { transform: rotate(-14deg) translateY(-30px); opacity: 0; }
+  25%  { opacity: 1; }
+  45%  { transform: rotate(10deg) translateY(0); }
+  68%  { transform: rotate(-5deg); }
+  85%  { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); opacity: 1; }
+}
+
+/* Woven Fabric Lanyard Ribbon */
+.lanyard-strap {
+  width: 26px;
+  height: 52px;
+  background: repeating-linear-gradient(
+    45deg,
+    #1d4ed8,
+    #1d4ed8 4px,
+    #1e40af 4px,
+    #1e40af 8px
+  );
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  position: relative;
+  border-radius: 2px 2px 0 0;
+}
+
+.lanyard-buckle {
+  width: 32px;
+  height: 11px;
+  background: linear-gradient(180deg, #94a3b8 0%, #475569 50%, #1e293b 100%);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.lanyard-carabiner {
+  width: 17px;
+  height: 22px;
+  border: 3.5px solid #cbd5e1;
+  border-radius: 5px 5px 9px 9px;
+  background: transparent;
+  margin-top: -2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.lanyard-clip-joint {
+  width: 22px;
+  height: 8px;
+  background: #64748b;
+  border-radius: 2px;
+  margin-bottom: -11px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D Flippable Card Container */
+.badge-card-container {
+  width: 100%;
+  max-width: 295px;
+  perspective: 1200px;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.15s ease-out;
+}
+
+.badge-card-container:active {
+  cursor: grabbing;
+}
+
+.badge-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.badge-card-container.flipped .badge-card-inner {
+  transform: rotateY(180deg);
+}
+
+.badge-card-front,
+.badge-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  background: rgba(12, 16, 28, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.18);
+  overflow: hidden;
+}
+
+body.light-theme .badge-card-front,
+body.light-theme .badge-card-back {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(2, 132, 199, 0.12);
+}
+
+.badge-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Slot punch hole */
+.badge-punch-hole {
+  width: 34px;
+  height: 9px;
+  border-radius: 9999px;
+  background: #070913;
+  margin: 8px auto 2px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+body.light-theme .badge-punch-hole {
+  background: #f1f5f9;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Hologram Security Stripe on Back */
+.holo-stripe {
+  background: linear-gradient(
+    90deg,
+    #ff0077,
+    #7928ca,
+    #0070f3,
+    #00dfd8,
+    #22c55e,
+    #fbbf24,
+    #ff0077
+  );
+  background-size: 200% 100%;
+  animation: holoShift 4s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes holoShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ==========================================================================
+   CUSTOM NEON GREEN ARROW CURSOR & COLORFUL SPLASH BURST
+   ========================================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none !important;
+  }
+  
+  a, button, input, [role="button"], select, textarea, label {
+    cursor: none !important;
+  }
+
+  .custom-cursor-arrow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    z-index: 10000000;
+    transform: translate(-1px, -1px);
+    filter: drop-shadow(0 0 6px #22c55e) drop-shadow(0 0 12px rgba(34, 197, 94, 0.7));
+    transition: transform 0.1s ease-out;
+    opacity: 0;
+    will-change: transform, left, top;
+  }
+
+  body.cursor-visible .custom-cursor-arrow {
+    opacity: 1;
+  }
+
+  body.cursor-hover .custom-cursor-arrow {
+    transform: translate(-1px, -1px) scale(1.22) rotate(-5deg);
+    filter: drop-shadow(0 0 10px #38bdf8) drop-shadow(0 0 18px #22c55e);
+  }
+
+  body.cursor-click .custom-cursor-arrow {
+    transform: translate(-1px, -1px) scale(0.85);
+  }
+
+  #cursor-splash-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999999;
+  }
+}
+
+@media (pointer: coarse), (hover: none) {
+  .custom-cursor-arrow,
+  #cursor-splash-canvas {
+    display: none !important;
+  }
+}
+
 
 .luxury-card::before {
   content: '';
@@ -407,3 +796,56 @@ body.light-theme .skill-row:hover {
   0% { transform: scale(1); opacity: 0.9; }
   100% { transform: scale(2.8); opacity: 0; }
 }
+
+/* ==========================================================================
+   PROJECT SHOWCASE & FILTER COMPONENT STYLES
+   ========================================================================== */
+
+.project-tab-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.project-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .project-tab-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.project-tab-btn.active {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 2px 10px -2px rgba(59, 130, 246, 0.25);
+}
+
+body.light-theme .project-tab-btn.active {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.project-card {
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card:hover .project-icon-box {
+  transform: scale(1.08) rotate(2deg);
+}
+
+.project-icon-box {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
