@@ -35,12 +35,12 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <!-- Custom Core Styles -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20261124_02">
 </head>
 <body class="antialiased min-h-screen relative overflow-x-hidden">
 
   <!-- Cinematic Futuristic Portfolio Opening Intro Sequence -->
-  <div id="portfolio-loader" title="Click anywhere to skip">
+  <div id="portfolio-loader" onclick="this.classList.add('loaded'); this.style.opacity='0'; setTimeout(()=>this.remove(), 400);" title="Click anywhere to skip">
     <div class="max-w-md w-full px-6 flex flex-col items-center text-center">
       <!-- Animated QA Emblem -->
       <div class="w-16 h-16 rounded-2xl bg-blue-500/15 border-2 border-blue-500/50 flex items-center justify-center text-blue-400 mb-6 shadow-2xl relative">
@@ -354,9 +354,58 @@
                         Daffodil International University
                       </h4>
 
-                      <!-- QR Code to Contact Directly -->
-                      <div class="p-2 rounded-xl bg-white shadow-md mb-2">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=mailto:islam2305101896@diu.edu.bd" alt="Scan to Email" class="w-16 h-16">
+                      <!-- QR Code to Contact Directly (100% Offline & Reliable SVG) -->
+                      <div class="p-1.5 rounded-xl bg-white shadow-md mb-2 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-black" viewBox="0 0 100 100" fill="currentColor">
+                          <!-- Outer Markers -->
+                          <rect x="10" y="10" width="24" height="24" rx="3" fill="#000"/>
+                          <rect x="14" y="14" width="16" height="16" rx="2" fill="#fff"/>
+                          <rect x="18" y="18" width="8" height="8" rx="1" fill="#000"/>
+
+                          <rect x="66" y="10" width="24" height="24" rx="3" fill="#000"/>
+                          <rect x="70" y="14" width="16" height="16" rx="2" fill="#fff"/>
+                          <rect x="74" y="18" width="8" height="8" rx="1" fill="#000"/>
+
+                          <rect x="10" y="66" width="24" height="24" rx="3" fill="#000"/>
+                          <rect x="14" y="70" width="16" height="16" rx="2" fill="#fff"/>
+                          <rect x="18" y="74" width="8" height="8" rx="1" fill="#000"/>
+
+                          <!-- Data Matrix Dots -->
+                          <rect x="38" y="12" width="6" height="6" fill="#000"/>
+                          <rect x="48" y="16" width="6" height="6" fill="#000"/>
+                          <rect x="56" y="12" width="6" height="6" fill="#000"/>
+
+                          <rect x="38" y="26" width="6" height="6" fill="#000"/>
+                          <rect x="48" y="24" width="8" height="6" fill="#000"/>
+                          <rect x="58" y="26" width="4" height="6" fill="#000"/>
+
+                          <rect x="14" y="40" width="6" height="6" fill="#000"/>
+                          <rect x="24" y="44" width="8" height="6" fill="#000"/>
+                          <rect x="36" y="40" width="6" height="6" fill="#000"/>
+                          <rect x="46" y="42" width="8" height="6" fill="#000"/>
+                          <rect x="58" y="40" width="6" height="6" fill="#000"/>
+                          <rect x="68" y="44" width="6" height="6" fill="#000"/>
+                          <rect x="78" y="40" width="8" height="6" fill="#000"/>
+
+                          <rect x="12" y="52" width="8" height="6" fill="#000"/>
+                          <rect x="24" y="54" width="6" height="6" fill="#000"/>
+                          <rect x="38" y="52" width="6" height="6" fill="#000"/>
+                          <rect x="48" y="54" width="8" height="6" fill="#000"/>
+                          <rect x="60" y="52" width="6" height="6" fill="#000"/>
+                          <rect x="72" y="54" width="6" height="6" fill="#000"/>
+                          <rect x="82" y="52" width="6" height="6" fill="#000"/>
+
+                          <rect x="38" y="66" width="6" height="6" fill="#000"/>
+                          <rect x="48" y="70" width="6" height="6" fill="#000"/>
+                          <rect x="58" y="66" width="6" height="6" fill="#000"/>
+                          <rect x="68" y="72" width="8" height="6" fill="#000"/>
+                          <rect x="80" y="68" width="6" height="6" fill="#000"/>
+
+                          <rect x="40" y="80" width="8" height="6" fill="#000"/>
+                          <rect x="52" y="82" width="6" height="6" fill="#000"/>
+                          <rect x="64" y="80" width="8" height="6" fill="#000"/>
+                          <rect x="76" y="82" width="8" height="6" fill="#000"/>
+                        </svg>
                       </div>
 
                       <span class="text-[8px] font-mono text-zinc-400 mb-2">SCAN TO EMAIL QA ENGINEER</span>
@@ -2227,6 +2276,6 @@
   </div>
 
   <!-- Core Scripts -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20261124_02"></script>
 </body>
 </html>
